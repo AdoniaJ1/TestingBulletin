@@ -10,48 +10,39 @@ class Main extends JFrame {
 	// JFrame
 	static JFrame f;
 
-	// JButton
-	static JButton b, b1, b2;
-
 	// Label to display text
 	static JLabel l;
 
     static ArrayList<String> users;
 
+
 	// Main class
 	public static void main(String[] args)
 	{
+		boolean userNameSet = false;
+		users = new ArrayList<String>();
 		// Creating a new frame to store text field and
 		// button
 		f = new JFrame("panel");
 
-		// Creating a label to display text
-		l = new JLabel("panel label");
-
-		// Creating a new buttons
-		b = new JButton("button1");
-		b1 = new JButton("button2");
-		b2 = new JButton("button3");
-
 		// Creating a panel to add buttons
-		JPanel p = new UsernamePanel(users);
+		JPanel userNamePanel = new UsernamePanel(users, userNameSet);
 
-		// Adding buttons and textfield to panel
-		// using add() method
-		p.add(b);
-		p.add(b1);
-		p.add(b2);
-		p.add(l);
-
-		// setbackground of panel
-		p.setBackground(Color.red);
-
+		JPanel chatPanel = new JPanel();
+		JButton button = new JButton("afjbaf");
+		chatPanel.add(button);
 		// Adding panel to frame
-		f.add(p);
-
+		f.add(userNamePanel);
 		// Setting the size of frame
 		f.setSize(300, 300);
 
 		f.setVisible(true);
+
+		while(!userNameSet){
+
+		}
+		userNamePanel.setVisible(false);
+		f.add(chatPanel);
+		chatPanel.setVisible(true);
 	}
 }
