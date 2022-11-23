@@ -15,34 +15,19 @@ class Main extends JFrame {
 
     static ArrayList<String> users;
 
-
 	// Main class
 	public static void main(String[] args)
 	{
-		boolean userNameSet = false;
 		users = new ArrayList<String>();
 		// Creating a new frame to store text field and
 		// button
 		f = new JFrame("panel");
-
-		// Creating a panel to add buttons
-		JPanel userNamePanel = new UsernamePanel(users, userNameSet);
-
-		JPanel chatPanel = new JPanel();
-		JButton button = new JButton("afjbaf");
-		chatPanel.add(button);
-		// Adding panel to frame
+		f.setSize(500, 300);
+		JPanel chatPanel = new ChatPanel("Group1");
+		chatPanel.setVisible(false);
+		UsernamePanel userNamePanel = new UsernamePanel(users, chatPanel);
 		f.add(userNamePanel);
-		// Setting the size of frame
-		f.setSize(300, 300);
-
 		f.setVisible(true);
-
-		while(!userNameSet){
-
-		}
-		userNamePanel.setVisible(false);
 		f.add(chatPanel);
-		chatPanel.setVisible(true);
 	}
 }
